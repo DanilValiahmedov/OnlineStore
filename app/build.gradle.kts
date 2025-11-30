@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -40,6 +41,9 @@ android {
 }
 
 dependencies {
+    // Retrofit
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)

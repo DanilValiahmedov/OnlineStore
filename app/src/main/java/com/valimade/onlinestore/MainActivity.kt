@@ -17,6 +17,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        App.appComponent.inject(this)
         setContent {
             OnlineStoreTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
