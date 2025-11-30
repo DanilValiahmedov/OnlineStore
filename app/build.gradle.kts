@@ -40,7 +40,11 @@ android {
 }
 
 dependencies {
-
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.adapter.rxjava2)
+    // RxJava
     implementation(libs.rxjava)
     implementation(libs.rxandroid)
 
