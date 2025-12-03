@@ -1,7 +1,7 @@
-package com.valimade.onlinestore.product.di.module
+package com.valimade.onlinestore.di.module
 
-import com.valimade.onlinestore.product.domain.repository.ProductRepository
-import com.valimade.onlinestore.product.domain.usecase.GetProductsUseCase
+import com.valimade.onlinestore.domain.repository.ProductRepository
+import com.valimade.onlinestore.domain.usecase.GetProductsUseCase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

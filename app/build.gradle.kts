@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-    // Retrofit
+    // Dagger
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
     // Retrofit

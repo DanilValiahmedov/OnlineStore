@@ -1,4 +1,4 @@
-package com.valimade.onlinestore.product.data.model
+package com.valimade.onlinestore.data.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

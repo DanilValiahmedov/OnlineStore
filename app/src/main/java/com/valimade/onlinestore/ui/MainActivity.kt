@@ -1,4 +1,4 @@
-package com.valimade.onlinestore
+package com.valimade.onlinestore.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,13 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.valimade.onlinestore.App
 import com.valimade.onlinestore.ui.theme.OnlineStoreTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        App.appComponent.inject(this)
+        App.Companion.appComponent.inject(this)
         setContent {
             OnlineStoreTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

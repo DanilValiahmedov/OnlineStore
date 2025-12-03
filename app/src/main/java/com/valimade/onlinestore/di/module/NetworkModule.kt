@@ -1,6 +1,6 @@
-package com.valimade.onlinestore.product.di.module
+package com.valimade.onlinestore.di.module
 
-import com.valimade.onlinestore.product.data.api.ProductApi
+import com.valimade.onlinestore.data.api.ProductApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

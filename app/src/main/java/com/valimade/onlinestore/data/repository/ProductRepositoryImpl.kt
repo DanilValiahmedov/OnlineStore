@@ -1,9 +1,9 @@
-package com.valimade.onlinestore.product.data.repository
+package com.valimade.onlinestore.data.repository
 
-import com.valimade.onlinestore.product.data.api.ProductApi
-import com.valimade.onlinestore.product.data.mapper.toDomain
-import com.valimade.onlinestore.product.domain.model.Product
-import com.valimade.onlinestore.product.domain.repository.ProductRepository
+import com.valimade.onlinestore.data.api.ProductApi
+import com.valimade.onlinestore.data.mapper.toDomain
+import com.valimade.onlinestore.domain.model.Product
+import com.valimade.onlinestore.domain.repository.ProductRepository
 import io.reactivex.Single
 
 class ProductRepositoryImpl(

@@ -1,11 +1,11 @@
-package com.valimade.onlinestore.product.data.mapper
+package com.valimade.onlinestore.data.mapper
 
-import com.valimade.onlinestore.product.data.model.DimensionsDto
-import com.valimade.onlinestore.product.data.model.ProductDto
-import com.valimade.onlinestore.product.data.model.ReviewDto
-import com.valimade.onlinestore.product.domain.model.Dimensions
-import com.valimade.onlinestore.product.domain.model.Product
-import com.valimade.onlinestore.product.domain.model.Review
+import com.valimade.onlinestore.data.dto.DimensionsDto
+import com.valimade.onlinestore.data.dto.ProductDto
+import com.valimade.onlinestore.data.dto.ReviewDto
+import com.valimade.onlinestore.domain.model.Dimensions
+import com.valimade.onlinestore.domain.model.Product
+import com.valimade.onlinestore.domain.model.Review
 
 fun ProductDto.toDomain(): Product {
     return Product(

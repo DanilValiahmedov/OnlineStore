@@ -1,4 +1,4 @@
-package com.valimade.onlinestore.product.domain.model
+package com.valimade.onlinestore.domain.model
 
 data class Product(
     val id: Int,

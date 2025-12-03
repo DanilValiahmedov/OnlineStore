@@ -1,6 +1,6 @@
-package com.valimade.onlinestore.product.data.api
+package com.valimade.onlinestore.data.api
 
-import com.valimade.onlinestore.product.data.model.ProductsResponseDto
+import com.valimade.onlinestore.data.dto.ProductsResponseDto
 import io.reactivex.Single
 import retrofit2.http.GET
 

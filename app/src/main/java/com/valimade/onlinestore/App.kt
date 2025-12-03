@@ -1,11 +1,12 @@
 package com.valimade.onlinestore
 
 import android.app.Application
-import com.valimade.onlinestore.product.di.AppComponent
-import com.valimade.onlinestore.product.di.DaggerAppComponent
-import com.valimade.onlinestore.product.di.module.NetworkModule
-import com.valimade.onlinestore.product.di.module.RepositoryModule
-import com.valimade.onlinestore.product.di.module.UseCaseModule
+import com.valimade.onlinestore.di.AppComponent
+import com.valimade.onlinestore.di.DaggerAppComponent
+import com.valimade.onlinestore.di.module.NetworkModule
+import com.valimade.onlinestore.di.module.RepositoryModule
+import com.valimade.onlinestore.di.module.UseCaseModule
+import com.valimade.onlinestore.di.module.ViewModelModule
 
 class App : Application() {
 
@@ -20,6 +21,7 @@ class App : Application() {
             .networkModule(NetworkModule())
             .repositoryModule(RepositoryModule())
             .useCaseModule(UseCaseModule())
+            .viewModelModule(ViewModelModule())
             .build()
     }
 }
