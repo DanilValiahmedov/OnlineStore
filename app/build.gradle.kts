@@ -41,6 +41,8 @@ android {
 }
 
 dependencies {
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.7.0")
     // Dagger
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
