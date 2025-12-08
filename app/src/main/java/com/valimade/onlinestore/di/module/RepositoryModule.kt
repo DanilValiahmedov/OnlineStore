@@ -1,6 +1,7 @@
 package com.valimade.onlinestore.di.module
 
 import com.valimade.onlinestore.data.api.ProductApi
+import com.valimade.onlinestore.data.db.ProductLocalDataSource
 import com.valimade.onlinestore.data.repository.ProductRepositoryImpl
 import com.valimade.onlinestore.domain.repository.ProductRepository
 import dagger.Module
@@ -12,7 +13,10 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideProductRepository(api: ProductApi): ProductRepository {
-        return ProductRepositoryImpl(api)
+    fun provideProductRepository(
+        api: ProductApi,
+        dao: ProductLocalDataSource
+    ): ProductRepository {
+        return ProductRepositoryImpl(api, dao)
     }
 }

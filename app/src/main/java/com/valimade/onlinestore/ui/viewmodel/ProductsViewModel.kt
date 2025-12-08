@@ -1,6 +1,7 @@
 package com.valimade.onlinestore.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.valimade.onlinestore.domain.usecase.GetProductsFromDbUseCase
 import com.valimade.onlinestore.domain.usecase.GetProductsUseCase
 import com.valimade.onlinestore.ui.model.ProductsState
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -9,7 +10,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 class ProductsViewModel(
-    private val getProductsUseCase: GetProductsUseCase
+    private val getProductsUseCase: GetProductsUseCase,
+    private val getProductsFromDbUseCase: GetProductsFromDbUseCase,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(ProductsState())
