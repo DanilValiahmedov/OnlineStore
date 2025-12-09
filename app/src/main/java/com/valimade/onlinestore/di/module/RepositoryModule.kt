@@ -1,7 +1,7 @@
 package com.valimade.onlinestore.di.module
 
 import com.valimade.onlinestore.data.api.ProductApi
-import com.valimade.onlinestore.data.db.ProductLocalDataSource
+import com.valimade.onlinestore.data.db.orm.ProductLocalDataSource
 import com.valimade.onlinestore.data.repository.ProductRepositoryImpl
 import com.valimade.onlinestore.domain.repository.ProductRepository
 import dagger.Module

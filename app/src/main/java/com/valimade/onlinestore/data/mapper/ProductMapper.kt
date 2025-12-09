@@ -1,6 +1,6 @@
 package com.valimade.onlinestore.data.mapper
 
-import com.valimade.onlinestore.data.db.ProductEntity
+import com.valimade.onlinestore.data.db.orm.ProductEntity
 import com.valimade.onlinestore.data.dto.ProductDto
 import com.valimade.onlinestore.domain.model.Product
 
@@ -17,7 +17,7 @@ fun ProductDto.toDomain(): Product {
 }
 
 
-fun ProductDto.toEntity(): ProductEntity {
+fun Product.toEntity(): ProductEntity {
     return ProductEntity(
         id = id,
         title = title,

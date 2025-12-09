@@ -1,6 +1,6 @@
 package com.valimade.onlinestore.di.module
 
-import com.valimade.onlinestore.domain.usecase.GetProductsFromDbUseCase
+import com.valimade.onlinestore.domain.usecase.GetProductsOrmUseCase
 import com.valimade.onlinestore.domain.usecase.GetProductsUseCase
 import com.valimade.onlinestore.ui.viewmodel.ProductsViewModelFactory
 import dagger.Module
@@ -12,8 +12,8 @@ class ViewModelModule {
     @Provides
     fun provideProductsViewModelFactory(
         getProductsUseCase: GetProductsUseCase,
-        getProductsFromDbUseCase: GetProductsFromDbUseCase
+        getProductsOrmUseCase: GetProductsOrmUseCase
     ): ProductsViewModelFactory {
-        return ProductsViewModelFactory(getProductsUseCase, getProductsFromDbUseCase)
+        return ProductsViewModelFactory(getProductsUseCase, getProductsOrmUseCase)
     }
 }

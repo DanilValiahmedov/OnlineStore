@@ -2,9 +2,9 @@ package com.valimade.onlinestore.di.module
 
 import android.app.Application
 import com.j256.ormlite.dao.Dao
-import com.valimade.onlinestore.data.db.AppDatabaseHelper
-import com.valimade.onlinestore.data.db.ProductEntity
-import com.valimade.onlinestore.data.db.ProductLocalDataSource
+import com.valimade.onlinestore.data.db.orm.AppDatabaseHelper
+import com.valimade.onlinestore.data.db.orm.ProductEntity
+import com.valimade.onlinestore.data.db.orm.ProductLocalDataSource
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

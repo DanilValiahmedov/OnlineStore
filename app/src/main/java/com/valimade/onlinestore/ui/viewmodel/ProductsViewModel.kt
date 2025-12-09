@@ -2,8 +2,9 @@ package com.valimade.onlinestore.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.valimade.onlinestore.domain.model.Product
-import com.valimade.onlinestore.domain.usecase.GetProductsFromDbUseCase
+import com.valimade.onlinestore.domain.usecase.GetProductsOrmUseCase
 import com.valimade.onlinestore.domain.usecase.GetProductsUseCase
+import com.valimade.onlinestore.domain.usecase.SaveProductsToOrmUseCase
 import com.valimade.onlinestore.ui.model.ProductsState
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -15,7 +16,8 @@ import kotlinx.coroutines.flow.update
 
 class ProductsViewModel(
     private val getProductsUseCase: GetProductsUseCase,
-    private val getProductsFromDbUseCase: GetProductsFromDbUseCase,
+    private val getProductsOrmUseCase: GetProductsOrmUseCase,
+    private val saveProductsToOrmUseCase: SaveProductsToOrmUseCase,
 ) : ViewModel() {
 
     private val disposables = CompositeDisposable()
@@ -28,12 +30,14 @@ class ProductsViewModel(
     }
 
     private fun loadProducts() {
-        getProductsFromDbUseCase()
+        getProductsOrmUseCase()
             .flatMap { products ->
                 if (products.isNotEmpty()) {
                     Single.just(products)
                 } else {
-                    getProductsUseCase()
+                    val products = getProductsUseCase()
+                    saveProductsToOrmUseCase(products)
+                    products
                 }
             }
             .let(::executeLoading)

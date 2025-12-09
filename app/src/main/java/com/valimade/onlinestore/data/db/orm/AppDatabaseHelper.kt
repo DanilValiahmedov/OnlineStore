@@ -1,4 +1,4 @@
-package com.valimade.onlinestore.data.db
+package com.valimade.onlinestore.data.db.orm
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

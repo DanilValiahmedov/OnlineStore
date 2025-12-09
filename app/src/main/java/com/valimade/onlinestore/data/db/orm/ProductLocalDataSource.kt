@@ -1,4 +1,4 @@
-package com.valimade.onlinestore.data.db
+package com.valimade.onlinestore.data.db.orm
 
 import com.j256.ormlite.dao.Dao
 
