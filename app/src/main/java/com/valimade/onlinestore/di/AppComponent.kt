@@ -1,7 +1,8 @@
 package com.valimade.onlinestore.di
 
 import android.app.Application
-import com.valimade.onlinestore.di.module.DatabaseModule
+import com.valimade.onlinestore.di.module.DatabaseOrmModule
+import com.valimade.onlinestore.di.module.DatabaseRoomModule
 import com.valimade.onlinestore.ui.MainActivity
 import com.valimade.onlinestore.di.module.NetworkModule
 import com.valimade.onlinestore.di.module.RepositoryModule
@@ -13,7 +14,8 @@ import javax.inject.Singleton
 
 @Component(
     modules = [
-        DatabaseModule::class,
+        DatabaseOrmModule::class,
+        DatabaseRoomModule::class,
         NetworkModule::class,
         RepositoryModule::class,
         UseCaseModule::class,
