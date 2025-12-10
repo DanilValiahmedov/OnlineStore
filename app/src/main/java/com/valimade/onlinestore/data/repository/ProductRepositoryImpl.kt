@@ -1,17 +1,19 @@
 package com.valimade.onlinestore.data.repository
 
 import com.valimade.onlinestore.data.api.ProductApi
-import com.valimade.onlinestore.data.db.orm.ProductEntity
 import com.valimade.onlinestore.data.db.orm.ProductLocalDataSource
+import com.valimade.onlinestore.data.db.room.ProductDao
 import com.valimade.onlinestore.data.mapper.toDomain
 import com.valimade.onlinestore.data.mapper.toEntity
+import com.valimade.onlinestore.data.mapper.toEntityRoom
 import com.valimade.onlinestore.domain.model.Product
 import com.valimade.onlinestore.domain.repository.ProductRepository
 import io.reactivex.Single
 
 class ProductRepositoryImpl(
     private val api: ProductApi,
-    private val dao: ProductLocalDataSource
+    private val daoOrm: ProductLocalDataSource,
+    private val daoRoom: ProductDao,
 ) : ProductRepository {
 
     override fun getProducts(): Single<List<Product>> {
@@ -24,7 +26,7 @@ class ProductRepositoryImpl(
 
     override fun getProductsFromOrm(): Single<List<Product>> {
         return Single.fromCallable {
-            dao.getProducts().map { it.toDomain() }
+            daoOrm.getProducts().map { it.toDomain() }
         }
     }
 
@@ -32,7 +34,22 @@ class ProductRepositoryImpl(
         single
             .doOnSuccess { products ->
                 val entities = products.map { it.toEntity() }
-                dao.insertProducts(entities)
+                daoOrm.insertProducts(entities)
+            }
+            .subscribe()
+    }
+
+    override fun getProductsFromRoom(): Single<List<Product>> {
+        return Single.fromCallable {
+            daoRoom.getProducts().map { it.toDomain() }
+        }
+    }
+
+    override fun saveProductsToRoom(single: Single<List<Product>>) {
+        single
+            .doOnSuccess { products ->
+                val entities = products.map { it.toEntityRoom() }
+                daoRoom.insertProducts(entities)
             }
             .subscribe()
     }

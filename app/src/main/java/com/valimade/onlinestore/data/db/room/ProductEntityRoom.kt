@@ -3,7 +3,7 @@ package com.valimade.onlinestore.data.db.room
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "products")
+@Entity(tableName = "products_room")
 data class ProductEntityRoom(
     @PrimaryKey
     val id: Int,

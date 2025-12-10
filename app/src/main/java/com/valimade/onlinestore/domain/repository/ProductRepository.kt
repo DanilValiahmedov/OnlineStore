@@ -7,4 +7,6 @@ interface ProductRepository {
     fun getProducts(): Single<List<Product>>
     fun getProductsFromOrm(): Single<List<Product>>
     fun saveProductsToOrm(single: Single<List<Product>>)
+    fun getProductsFromRoom(): Single<List<Product>>
+    fun saveProductsToRoom(single: Single<List<Product>>)
 }

@@ -1,6 +1,6 @@
 package com.valimade.onlinestore.di.module
 
-import android.content.Context
+import android.app.Application
 import androidx.room.Room
 import com.valimade.onlinestore.data.db.room.AppDatabase
 import com.valimade.onlinestore.data.db.room.ProductDao
@@ -9,13 +9,13 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class DatabaseRoomModule(private val context: Context) {
+class DatabaseRoomModule {
 
     @Provides
     @Singleton
-    fun provideRoomDatabase(): AppDatabase {
+    fun provideRoomDatabase(application: Application): AppDatabase {
         return Room.databaseBuilder(
-            context,
+            application,
             AppDatabase::class.java,
             "room_products.db"
         ).build()
